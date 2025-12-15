@@ -15,7 +15,10 @@ class ScapeGoatTree {
     Node* rebuildTree(int start,int end,Node* parent_node);
     void inorderTraversal(const Node *node, int &i);
     static void postorderTraversal(const Node* node);
-     void preorderTraversal(const Node* node);
+     void preorderTraversal(const Node* node); 
+     void displayPreOrder(const Node* node) const; // for display
+     void displayInOrder(const Node* node) const; // for display
+     void displayPostOrder(const Node* node) const; // for display
     Node* root{};
     int array[100]{};
     int nNodes{};
@@ -25,6 +28,9 @@ public:
     ScapeGoatTree();
     // Inserts a new value into the tree 
     void insert(int value);
+    void displayPreOrder() const; // for display
+    void displayInOrder() const; // for display
+    void displayPostOrder() const; // for display
     void deleteValue(int value);
     ~ScapeGoatTree(){postorderTraversal(root);}
     void isBalanced() const;
