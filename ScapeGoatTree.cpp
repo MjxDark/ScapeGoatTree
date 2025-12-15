@@ -275,3 +275,66 @@ void ScapeGoatTree::operator+=(const int value) {
     insert(value);
 }
 
+// display edit from here
+// 1. Private Helper: Pre-Order Traversal (Root -> Left -> Right)
+void ScapeGoatTree::displayPreOrder(const Node* node) const {
+    if (node == nullptr) {
+        return;
+    }
+    cout << node->value << " ";
+    displayPreOrder(node->left);
+    displayPreOrder(node->right);
+}
+
+// 2. Public Method: Pre-Order Traversal
+void ScapeGoatTree::displayPreOrder() const {
+    cout << "\n--- Pre-Order Traversal (Root, Left, Right) ---" << endl;
+    if (root == nullptr) {
+        cout << "Tree is empty." << endl;
+        return;
+    }
+    displayPreOrder(root);
+    cout << "\n-----------------------------------------------" << endl;
+}
+
+// 3. Private Helper: In-Order Traversal (Left -> Root -> Right)
+void ScapeGoatTree::displayInOrder(const Node* node) const {
+    if (node == nullptr) {
+        return;
+    }
+    displayInOrder(node->left);
+    cout << node->value << " ";
+    displayInOrder(node->right);
+}
+
+// 4. Public Method: In-Order Traversal (Sorted Output)
+void ScapeGoatTree::displayInOrder() const {
+    cout << "\n--- In-Order Traversal (Sorted Output) ---" << endl;
+    if (root == nullptr) {
+        cout << "Tree is empty." << endl;
+        return;
+    }
+    displayInOrder(root);
+    cout << "\n------------------------------------------" << endl;
+}
+
+// 5. Private Helper: Post-Order Traversal (Left -> Right -> Root)
+void ScapeGoatTree::displayPostOrder(const Node* node) const {
+    if (node == nullptr) {
+        return;
+    }
+    displayPostOrder(node->left);
+    displayPostOrder(node->right);
+    cout << node->value << " ";
+}
+
+// 6. Public Method: Post-Order Traversal
+void ScapeGoatTree::displayPostOrder() const {
+    cout << "\n--- Post-Order Traversal (Left, Right, Root) ---" << endl;
+    if (root == nullptr) {
+        cout << "Tree is empty." << endl;
+        return;
+    }
+    displayPostOrder(root);
+    cout << "\n------------------------------------------------" << endl;
+}
